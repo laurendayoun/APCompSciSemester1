@@ -1,21 +1,27 @@
+import java.util.Scanner;
 public class Lesson_04
 {
+	static int one;
+	static int two;
+	
 	public static void main(String[]args)
 	{
-		Lesson_04 self = new Lesson_04();
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Enter 1st number: ");
+		one = kb.nextInt();
+		System.out.println("Enter 2nd number: ");
+		two = kb.nextInt();
 		
-		String word1 = "blaaaah";
-		double number1 = 444.2341;
+		add();
+		print();
 		
-		self.format(word1, number1);
-		
-		String word2 = "yessssss";
-		double number2 = 567889.7126354;
-		
-		self.format(word2, number2);
 	}
-	public void format(String word, double number)
+	public static int add()
 	{
-		System.out.printf("\n%10s   %10.2f", word, number);
+		return one+two;
+	}
+	public static void print()
+	{
+		System.out.println(one + " + " + two + " = " + add());
 	}
 }
