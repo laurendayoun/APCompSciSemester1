@@ -21,6 +21,6 @@ public class Lab_04_07_Cube
 	
 	public static void print()
 	{
-		System.out.printf("The surface area of a cube with a side length of " + side + " is %2.2f.", calcSA());
+		System.out.printf("The surface area of a cube with a side length of " + side + " is %2.5f.", calcSA());
 	}
 }
