@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Lab_04_08_Circle
+public class Lab_04_02_Circle
 {
 	static double r;
 	static double area;
@@ -13,14 +13,13 @@ public class Lab_04_08_Circle
 		print();
 	}
 	
-	public static double calcArea()
+	public static void calcArea()
 	{
 		area = r*r*(3.14);
-		return area;
 	}
 	
 	public static void print()
 	{
-		System.out.printf("The area of a circle with a radius of " + r + " is %2.5f.", calcArea());
+		System.out.printf("The area of a circle with a radius of " + r + " is %2.5f.", area);
 	}
 }

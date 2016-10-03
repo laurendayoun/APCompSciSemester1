@@ -1,27 +1,24 @@
 import java.util.Scanner;
 public class Lesson_04
 {
-	static int one;
-	static int two;
-	
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter 1st number: ");
-		one = kb.nextInt();
+		int one = kb.nextInt();
 		System.out.println("Enter 2nd number: ");
-		two = kb.nextInt();
+		int two = kb.nextInt();
 		
-		add();
-		print();
+		int sum = add(one, two);
+		print(one, two, sum);
 		
 	}
-	public static int add()
+	public static int add(int one, int two)
 	{
-		return one+two;
+		return one + two;
 	}
-	public static void print()
+	public static void print(int one, int two, int sum)
 	{
-		System.out.println(one + " + " + two + " = " + add());
+		System.out.println(one + " + " + two + " = " + sum);
 	}
 }

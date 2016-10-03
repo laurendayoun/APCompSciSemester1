@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Lab_04_07_Cube
+public class Lab_04_02_Cube
 {
 	static double side;
 	static double sa;
@@ -13,14 +13,13 @@ public class Lab_04_07_Cube
 		print();
 	}
 	
-	public static double calcSA()
+	public static void calcSA()
 	{
 		sa = side*side*6;
-		return sa;
 	}
 	
 	public static void print()
 	{
-		System.out.printf("The surface area of a cube with a side length of " + side + " is %2.5f.", calcSA());
+		System.out.printf("The surface area of a cube with a side length of " + side + " is %2.5f.", sa);
 	}
 }

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Lab_04_05_Rectangle
+public class Lab_04_02_Rectangle
 {
 	static double l;
 	static double w;
@@ -16,14 +16,13 @@ public class Lab_04_05_Rectangle
 		print();
 	}
 	
-	public static double calcPerim()
+	public static void calcPerim()
 	{
 		perimeter = 2*(l+w);
-		return perimeter;
 	}
 	
 	public static void print()
 	{
-		System.out.println("Your rectangle is " + calcPerim() + " feet around.");
+		System.out.printf("Your rectangle is %7.5f feet around.", perimeter);
 	}
 }

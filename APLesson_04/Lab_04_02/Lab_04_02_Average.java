@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Lab_04_06_Average
+public class Lab_04_02_Average
 {
 	static double num1;
 	static double num2;
@@ -19,14 +19,13 @@ public class Lab_04_06_Average
 		print();
 	}
 	
-	public static double calcaverage()
+	public static void calcaverage()
 	{
 		average = (num1+num2+num3)/3;
-		return average;
 	}
 	
 	public static void print()
 	{
-		System.out.printf("The average of " + num1 + ", " + num2 + " and " + num3 + " is %2.2f.", calcaverage());
+		System.out.printf("The average of " + num1 + ", " + num2 + " and " + num3 + " is %2.5f.", average);
 	}
 }
