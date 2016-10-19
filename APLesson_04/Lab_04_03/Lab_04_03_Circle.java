@@ -3,7 +3,7 @@ public class Lab_04_03_Circle
 {
 	public static void main(String[]args)
 	{
-		Lab_04_03_Circle self = new Lab_04_03_Circle();
+		
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter the radius: ");
 		double r = kb.nextDouble();

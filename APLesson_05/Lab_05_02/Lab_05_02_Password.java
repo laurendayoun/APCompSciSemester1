@@ -18,7 +18,7 @@ public class Lab_05_02_Password
 		System.out.println("What is your username? ");
 		String usernamei = kb.next();
 		System.out.println("What is your password? ");
-		String passwordi = kb.next();
+		String passwordi = kb.next();q2
 		
 		if (passcheck(passwordi) && usercheck(usernamei))
 		{

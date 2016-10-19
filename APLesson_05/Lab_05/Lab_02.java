@@ -3,7 +3,6 @@ public class Lab_02
 {
 	public static void main (String[]args)
 	{
-		Lab_02 self = new Lab_02();
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Please input the name of the first item: ");
 		String name1 = kb.next();
@@ -26,14 +25,14 @@ public class Lab_02
 		double tax = (subtotal - discount) * 0.08;
 		double total = subtotal - discount + tax;
 		System.out.println("<<<<<<<<<<<<<<<<<<<<<  Receipt  >>>>>>>>>>>>>>>>>>>>>");
-		self.format(name1, item1);
-		self.format(name2, item2);
-		self.format(name3, item3);
-		self.format(name4, item4);
-		self.format("Subtotal", subtotal);
-		self.format("Discount", discount);
-		self.format("Tax", tax);
-		self.format("Total", total);
+		format(name1, item1);
+		format(name2, item2);
+		format(name3, item3);
+		format(name4, item4);
+		format("Subtotal", subtotal);
+		format("Discount", discount);
+		format("Tax", tax);
+		format("Total", total);
 		System.out.println("\n_______________________________________________________");
 		System.out.println("Thank you for your visit!");
 		

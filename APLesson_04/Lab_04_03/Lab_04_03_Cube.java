@@ -3,7 +3,6 @@ public class Lab_04_03_Cube
 {
 	public static void main(String[]args)
 	{
-		Lab_04_03_Cube self = new Lab_04_03_Cube();
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter the side length: ");
 		double side = kb.nextDouble();

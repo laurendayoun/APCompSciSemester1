@@ -3,7 +3,6 @@ public class Lab_04_03_Average
 {
 	public static void main(String[]args)
 	{
-		Lab_04_03_Average self = new Lab_04_03_Average();
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter the first number: ");
 		double num1 = kb.nextDouble();

@@ -3,7 +3,6 @@ public class Lab_04_03_Rectangle
 {	
 	public static void main(String[]args)
 	{
-		Lab_04_03_Rectangle self = new Lab_04_03_Rectangle();
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter the length of the rectangle: ");
 		double l = kb.nextDouble();
