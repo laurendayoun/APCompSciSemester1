@@ -35,7 +35,7 @@ public class Lab_09_GetOdds
 		int odds  = 0;
 		for (int a: numbers)
 		{
-			if (a%2 == 0)
+			if (a%2 != 0)
 			{
 				odds++;
 			}
