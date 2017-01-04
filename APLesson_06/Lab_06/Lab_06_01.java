@@ -10,7 +10,8 @@ public class Lab_06_01
 		
 		for (int i = 1; i <= a; i++)
 		{
-			System.out.print(input + " ");
+			System.out.println(input + " ");
 		}
+		
 	}
 }
