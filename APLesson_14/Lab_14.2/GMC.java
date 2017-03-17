@@ -1,4 +1,4 @@
-public class GMC implements Location
+public class GMC extends Car
 {
 	private double lx;
 	private double ly;
@@ -7,11 +7,6 @@ public class GMC implements Location
 	{
 		this.lx = x;
 		this.ly = y;
-	}
-	
-	public int getID()
-	{
-		return (int)(Math.random()*1000000) + 1;
 	}
 	
 	public void move(double x, double y)

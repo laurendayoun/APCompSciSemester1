@@ -1,4 +1,4 @@
-public class Toyota implements Location
+public class Toyota extends Car
 {
 	private double[] loc;
 	
@@ -8,11 +8,6 @@ public class Toyota implements Location
 		loc = new double[2];
 		this.loc[0] = Double.parseDouble(locstring[0]);
 		this.loc[1] = Double.parseDouble(locstring[1]);
-	}
-	
-	public int getID()
-	{
-		return (int)(Math.random()*1000000) + 1;
 	}
 	
 	public void move(double x, double y)
