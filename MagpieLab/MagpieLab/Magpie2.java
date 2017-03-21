@@ -15,7 +15,7 @@ public class Magpie2
 			System.out.println("Say something, please.");
 		}
 
-		else if (findKeyword(statement, "no", 0) >= 0)
+		else if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
 		}
@@ -36,7 +36,7 @@ public class Magpie2
 			response = "Tell me more about your pet";
 		}
 		
-		else if (findKeyword(statement, "Robinette", 0) != -1)
+		else if (findKeyword(statement, "robinette") >= 0)
 		{
 			response = "He sounds like a pretty dank teacher";
 		}
@@ -60,12 +60,13 @@ public class Magpie2
 		{
 			if (psn > 0)
 			{
-				String before = phrase.substring(0, psn - 1);
+				String before = phrase.substring(0, psn);
 				
-				if (goal.length() > (phrase.length() - before.length()))
+				if (goal.length() >= (phrase.length() - before.length()))
 				{
 					String after = phrase.substring(psn + goal.length());
-					if (before.compareTo("a") > 0 && after.compareTo("z") > 0)
+					if (before.compareTo("a") > 0  
+						&& after.compareTo("a") > 0)
 					{
 						return psn;
 					}
