@@ -60,13 +60,15 @@ public class Magpie2
 		{
 			if (psn > 0)
 			{
-				String before = phrase.substring(0, psn);
+				String beforeall = phrase.substring(0, psn);
+				Character b = phrase.charAt(psn - 1);
+				String before = b.toString();
 				
-				if (goal.length() >= (phrase.length() - before.length()))
+				if (goal.length() >= (phrase.length() - beforeall.length()))
 				{
 					String after = phrase.substring(psn + goal.length());
-					if (before.compareTo("a") > 0  
-						&& after.compareTo("a") > 0)
+					if (!(before.compareTo("zz") > 0)
+						&& !(after.compareTo("zzz") > 0))
 					{
 						return psn;
 					}
@@ -77,8 +79,7 @@ public class Magpie2
 					psn = phrase.indexOf(goal, psn + 1); 
 				}
 			}
-			
-			return 0;
+			return psn;
 		}
 
 		return -1;
