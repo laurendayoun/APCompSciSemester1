@@ -8,9 +8,9 @@ public class Magpie2
 	
 	public String getResponse(String statement)
 	{
-		String response = "";	 
+		String response = "";
 		 
-		if (statement.length() == 0)
+		if (statement.length() == 0 || statement.trim().length() == 0)
 		{
 			System.out.println("Say something, please.");
 		}
@@ -41,18 +41,72 @@ public class Magpie2
 			response = "He sounds like a pretty dank teacher";
 		}
 
+		else if (findKeyword(statement, "I want to", 0) >= 0)
+		{
+			response = transformIWantToStatement(statement);
+		}
+
 		else
 		{
-			response = getRandomResponse();
+			int psn = findKeyword(statement, "you", 0);
+
+			if (findKeyword(statement, "me", psn) >= 0
+			|| findKeyword(statement, "me.", psn) >= 0 
+			&& psn >= 0)
+			{
+				response = transformYouMeStatement(statement);
+			}
+			else
+			{
+				response = getRandomResponse();
+			}
+		}
+		return response;
+		
+	}
+	
+	private String transformIWantToStatement(String statement)
+	{
+		statement = statement.trim();
+		Character lastCha = statement.charAt(statement.length() - 1);
+		String lastChar = lastCha.toString();
+		
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement.length() - 1);
 		}
 		
-		return response;
+		int psn = findKeyword(statement, "I want to");
+		
+		String restofStatement = statement.substring(psn + 9);
+		
+		return "What would it mean to" + restofStatement;
+	}
+	
+	private String transformYouMeStatement(String statement)
+	{
+		statement = statement.trim();
+		Character lastCha = statement.charAt(statement.length() - 1);
+		String lastChar = lastCha.toString();
+		
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement.length() - 1);
+		}
+		
+		int psnofYou = findKeyword(statement, "you");
+		int psnofMe = findKeyword(statement, "me", psnofYou + 3);
+		
+		String restofStatement = statement.substring(psnofYou + 3, psnofMe);
+		
+		return "What makes you think that I" + restofStatement + "you?";
 	}
 	
 	private int findKeyword(String statement, String goal, int startPos)
 	{
 		String phrase = statement.trim();
 		phrase = phrase.toLowerCase();
+		goal = goal.toLowerCase();
 		
 		int psn = phrase.indexOf(goal, startPos);
 		
