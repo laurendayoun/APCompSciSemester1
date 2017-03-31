@@ -46,12 +46,12 @@ public class Magpie2
 			response = transformIWantToStatement(statement);
 		}
 
-		else
+		else if (findKeyword(statement, "you", 0) >= 0
+					&& findKeyword(statement, "me", 3) >= 0)
 		{
 			int psn = findKeyword(statement, "you", 0);
 
 			if (findKeyword(statement, "me", psn) >= 0
-			|| findKeyword(statement, "me.", psn) >= 0 
 			&& psn >= 0)
 			{
 				response = transformYouMeStatement(statement);
@@ -61,6 +61,22 @@ public class Magpie2
 				response = getRandomResponse();
 			}
 		}
+		
+		else
+		{
+			int psn = findKeyword(statement, "i", 0);
+
+			if (findKeyword(statement, "you", psn) >= 0
+			&& psn >= 0)
+			{
+				response = transformIYouStatement(statement);
+			}
+			else
+			{
+				response = getRandomResponse();
+			}
+		}
+		
 		return response;
 		
 	}
@@ -102,11 +118,35 @@ public class Magpie2
 		return "What makes you think that I" + restofStatement + "you?";
 	}
 	
+	private String transformIYouStatement(String statement)
+	{
+		statement = statement.trim();
+		String lastChar = statement.substring(statement.length() - 1);
+		
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement.length() - 1);
+		}
+		
+		int psnofI = findKeyword(statement, "i");
+		int psnofYou = findKeyword(statement, "you", psnofI + 3);
+		
+		String restofStatement = statement.substring(psnofI + 1, psnofYou);
+		
+		return "Why do you" + restofStatement + "me?";
+	}
+	
 	private int findKeyword(String statement, String goal, int startPos)
 	{
 		String phrase = statement.trim();
 		phrase = phrase.toLowerCase();
 		goal = goal.toLowerCase();
+		String lastChar = phrase.substring(statement.length() - 1);
+		
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement.length() - 1);
+		}
 		
 		int psn = phrase.indexOf(goal, startPos);
 		
