@@ -1,6 +1,6 @@
 public class Car implements Location
 {
-	private double[] location;
+	public double[] location;
 	public final int ID = (int)(Math.random()*1000000) + 1;
 	
 	public Car()
