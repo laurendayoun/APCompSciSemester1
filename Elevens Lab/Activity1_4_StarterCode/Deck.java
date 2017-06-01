@@ -8,9 +8,6 @@ import java.util.ArrayList;
  */
 public class Deck {
 
-	/**
-	 * cards contains all the cards in the deck.
-	 */
 	private List<Card> cards;
 
 	/**
@@ -30,7 +27,17 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		this.cards = new ArrayList<Card>();
+		for (int i = 0; i < ranks.length; i++)
+		{
+			for (int j = 0; j < suits.length; j++)
+			{
+				cards.add(new Card(ranks[i], suits[j], values[i]));
+			}
+		}
+		
+		this.size = cards.size();
+		shuffle();
 	}
 
 
@@ -39,7 +46,14 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if (size == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	/**
@@ -47,7 +61,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
@@ -63,8 +77,18 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+	public Card deal() 
+	{
+		if (size > 0)
+		{
+			size -=1;
+			return cards.get(size);
+		}
+		else
+		{
+			return null;
+		}
+	
 	}
 
 	/**
