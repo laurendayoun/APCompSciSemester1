@@ -12,7 +12,7 @@ public class Magpie2
 		 
 		if (statement.length() == 0 || statement.trim().length() == 0)
 		{
-			System.out.println("Say something, please.");
+			response = "Say something, please.";
 		}
 
 		else if (findKeyword(statement, "no") >= 0)
@@ -28,12 +28,12 @@ public class Magpie2
 			response = "Tell me more about your family.";
 		}
 		
-		else if (findKeyword(statement, "cat") >= 0 
+		else if (findKeyword(statement, "cat") >= 0
 				|| findKeyword(statement, "dog") >= 0 
 				|| findKeyword(statement, "fish") >= 0 
 				|| findKeyword(statement, "turtle") >= 0)
 		{
-			response = "Tell me more about your pet";
+			response = "Tell me more about your pet.";
 		}
 		
 		else if (findKeyword(statement, "robinette") >= 0)
@@ -96,7 +96,7 @@ public class Magpie2
 		
 		String restofStatement = statement.substring(psn + 9);
 		
-		return "What would it mean to" + restofStatement;
+		return "What would it mean to" + restofStatement + "?";
 	}
 	
 	private String transformYouMeStatement(String statement)
@@ -138,29 +138,29 @@ public class Magpie2
 	
 	private int findKeyword(String statement, String goal, int startPos)
 	{
-		String phrase = statement.trim();
-		phrase = phrase.toLowerCase();
+		statement = statement.trim();
+		statement = statement.toLowerCase();
 		goal = goal.toLowerCase();
-		String lastChar = phrase.substring(statement.length() - 1);
+		String lastChar = statement.substring(statement.length() - 1);
 		
 		if (lastChar.equals("."))
 		{
 			statement = statement.substring(0, statement.length() - 1);
 		}
 		
-		int psn = phrase.indexOf(goal, startPos);
+		int psn = statement.indexOf(goal, startPos);
 		
 		while (psn >= 0)
 		{
 			if (psn > 0)
 			{
-				String beforeall = phrase.substring(0, psn);
-				Character b = phrase.charAt(psn - 1);
+				String beforeall = statement.substring(0, psn);
+				Character b = statement.charAt(psn - 1);
 				String before = b.toString();
 				
-				if (goal.length() >= (phrase.length() - beforeall.length()))
+				if (goal.length() >= (statement.length() - beforeall.length()))
 				{
-					String after = phrase.substring(psn + goal.length());
+					String after = statement.substring(psn + goal.length());
 					if (!(before.compareTo("zz") > 0)
 						&& !(after.compareTo("zzz") > 0))
 					{
@@ -170,7 +170,7 @@ public class Magpie2
 				
 				else
 				{
-					psn = phrase.indexOf(goal, psn + 1); 
+					psn = statement.indexOf(goal, psn + 1); 
 				}
 			}
 			return psn;

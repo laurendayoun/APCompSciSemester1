@@ -5,15 +5,21 @@ public class MagpieRunner2
 	{
 		Magpie2 maggie = new Magpie2();
 		
-		System.out.println (maggie.getGreeting());
-		Scanner in = new Scanner (System.in);
-		String statement = in.nextLine();
+		System.out.println(maggie.getResponse(" "));
+		System.out.println(maggie.getResponse("I know not no."));
+		System.out.println(maggie.getResponse("My cat died."));
+		System.out.println(maggie.getResponse("My Father is lazy."));
+		System.out.println(maggie.getResponse("I want to sleep."));
+		System.out.println(maggie.getResponse("I hate you."));
+		System.out.println(maggie.getResponse("You love me."));
 		
-		while (!statement.equals("Bye"))
-		{
-			System.out.println (maggie.getResponse(statement));
-			statement = in.nextLine();
-		}
+//		System.out.println (maggie.getGreeting());
+//		Scanner in = new Scanner (System.in);
+//		String statement = in.nextLine();
+		
+//		while (!statement.equals("Bye"))
+//		{
+//			System.out.println (maggie.getResponse(statement));
 	}
 
 }
