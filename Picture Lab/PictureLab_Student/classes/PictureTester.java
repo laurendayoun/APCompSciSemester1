@@ -157,7 +157,7 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
 	//testMirrorVerticalRighttoLeft();
-	testMirrorHorizontal();
+	//testMirrorHorizontal();
 	//testMirrorHorizontalBottoTop();
     //testMirrorTemple();
     //testMirrorArms();
@@ -166,7 +166,7 @@ public class PictureTester
     //testCollage();
     //testCopy();
 	//testMyCollage();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
